@@ -1,0 +1,15 @@
+[Unit]
+Description=SkyStats 2.7" e-Paper Display Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=joerg
+WorkingDirectory=/home/joerg
+ExecStart=/usr/bin/python3 /home/joerg/skystats_2in7.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
